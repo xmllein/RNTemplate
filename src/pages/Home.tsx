@@ -9,7 +9,7 @@ export default () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   const store = useStore();
-  const {count, increment, decrement} = store;
+  const {count, increment, decrement, incrementAsync, decrementAsync} = store;
 
   return (
     <View style={styles.root}>
@@ -39,6 +39,20 @@ export default () => {
         }}>
         <Text style={styles.detailBtnTxt}>count减少值</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.detailBtn}
+        onPress={() => {
+          incrementAsync();
+        }}>
+        <Text style={styles.detailBtnTxt}>异步count增加值</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.detailBtn}
+        onPress={() => {
+          decrementAsync();
+        }}>
+        <Text style={styles.detailBtnTxt}>异步count减少值</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
   },
   detailBtn: {
     marginTop: 20,
-    backgroundColor: '#0000ff',
+    backgroundColor: '#FFC300',
     padding: 10,
     borderRadius: 5,
   },

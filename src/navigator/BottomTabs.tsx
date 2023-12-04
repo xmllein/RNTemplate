@@ -60,7 +60,7 @@ function BottomTabs(props: Props): JSX.Element {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#0000ff',
+        tabBarActiveTintColor: '#FFC300',
         headerShown: false,
       }}>
       <Tab.Screen
